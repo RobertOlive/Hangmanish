@@ -13,7 +13,7 @@ let current = topics[Math.floor(Math.random()*topics.length)];
 
 let currentArray = Array.from(current);
 
-let tries = 0;
+let tries = [];
 
 function keyPress (e) {
   const blankMatch = document.querySelectorAll(`.${e.key}`)
@@ -21,8 +21,9 @@ function keyPress (e) {
   blankMatch.forEach(letter => letter.innerHTML = e.key);
   blankMatchUpper.forEach(letter => letter.innerHTML = e.key.toUpperCase());
   if (blankMatch.length === 0 && blankMatchUpper.length === 0) {
-    tries = tries + 1
+    tries.push(` ` + e.key);
     console.log(tries);
+    document.querySelector(`.tries`).innerHTML = tries;
   }
 }
 
@@ -44,6 +45,11 @@ class App extends Component {
                 return <br className={"space"} key={i}></br>
               }
             })}
+          </p>
+
+          <p>
+            Tries: 
+            <span className="tries"></span>
           </p>
         </header>
       </div>
