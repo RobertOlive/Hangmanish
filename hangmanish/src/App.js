@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Blank from "./components/Blank";
 
@@ -35,7 +35,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div className="hangman">
+            <div className="bodypart head 1"></div>
+            <div className="bodypart body 2"></div>
+            <div className='bodypart arm Larm Limb 3'></div>
+            <div className='bodypart arm Rarm Limb 4'></div>
+            <div className='bodypart leg Lleg Limb 5'></div>
+            <div className='bodypart leg Rleg Limb 6'></div>
+          </div>
           <p>
             {currentArray.map((letter, i) => {
               console.log(letter);

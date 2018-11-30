@@ -22,6 +22,46 @@
   color: #61dafb;
 }
 
+.hangman {
+  position: relative;
+}
+
+.bodypart {
+  position: absolute;
+}
+
+.head {
+  right: -5rem;
+  width: 10rem;
+  height: 10rem;
+  border: .1rem solid black;
+  border-radius: 50%;
+}
+
+.arm, .body {
+  top:10rem;
+}
+
+.body, .Limb {
+  height: 10rem;
+  width: .1rem;
+  background: black;
+}
+
+.leg {
+  top:20rem;
+}
+
+.Larm {
+  transform: rotate(45deg);
+  right: 3.5rem;
+}
+
+.Rarm {
+  transform: rotate(-45deg);
+  left: 3.5rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
