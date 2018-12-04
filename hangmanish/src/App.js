@@ -24,6 +24,9 @@ function keyPress (e) {
     tries.push(` ` + e.key);
     console.log(tries);
     document.querySelector(`.tries`).innerHTML = tries;
+    if (tries.length > 0 && tries.length < 7) {
+      document.querySelector(`.num${tries.length}`).style.visibility = `visible`;
+    }
   }
 }
 
@@ -36,12 +39,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div className="hangman">
-            <div className="bodypart head 1"></div>
-            <div className="bodypart body 2"></div>
-            <div className='bodypart arm Larm Limb 3'></div>
-            <div className='bodypart arm Rarm Limb 4'></div>
-            <div className='bodypart leg Lleg Limb 5'></div>
-            <div className='bodypart leg Rleg Limb 6'></div>
+            <div className="bodypart head num1"></div>
+            <div className="bodypart body num2"></div>
+            <div className='bodypart arm Larm Limb num3'></div>
+            <div className='bodypart arm Rarm Limb num4'></div>
+            <div className='bodypart leg Lleg Limb num5'></div>
+            <div className='bodypart leg Rleg Limb num6'></div>
           </div>
           <p>
             {currentArray.map((letter, i) => {
